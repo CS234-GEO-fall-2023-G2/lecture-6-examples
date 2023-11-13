@@ -1,0 +1,8 @@
+
+
+
+<div style="display: flex;">
+    <!-- {{todoItem.id}} -->
+    <input type="checkbox" [checked]="todoItem.done">
+    <div  [ngClass]="{'done-item': todoItem.done}">    {{todoItem.description}}    </div>
+</div>

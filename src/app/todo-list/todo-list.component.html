@@ -1,0 +1,24 @@
+<p>todo-list works!</p>
+
+
+
+<div *ngFor="let item of todoList; let i = index;">
+    <div  style="display: flex;"  [ngClass]="{'first-item': i == 0}">
+        <app-todo-list-item [todoItem]="item"></app-todo-list-item>
+        <button (click)="deleteItem(item.id)">Delete</button>
+        <button (click)="editItem(item)">Edit</button>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<form [formGroup]="todoForm" (ngSubmit)="addItem()">
+    <input type="text" formControlName="description">
+    <input type="checkbox" formControlName="done">
+
+    <button [disabled]="!todoForm.valid">Add</button>
+</form>
+
